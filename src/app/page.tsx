@@ -32,7 +32,7 @@ export default function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((i) => (i + 1) % data.length);
-    }, 6000);
+    }, 10000);
     return () => clearInterval(interval);
   }, []);
 
@@ -63,7 +63,7 @@ export default function Home() {
         </Link>
               
       
-        <motion.button 
+        {/* <motion.button 
             className='flex flex-col gap-1 items-end cursor-pointer justify-center hover:bg-brand-orange'
             onClick={() => {setClicked(!clicked); setDropDown(!dropDown) }}
           >
@@ -114,6 +114,40 @@ export default function Home() {
                 type: 'spring',
                 ease:'easeInOut'
               }}
+            />
+        </motion.button> */}
+        <motion.button
+            onClick={() => {setClicked(!clicked); setDropDown(!dropDown)}}
+
+            className="relative flex flex-col justify-center items-end w-6 h-6 cursor-pointer"
+          >
+            {/* Top line */}
+            <motion.span
+              className="absolute h-0.5 w-8 bg-brand-dark-gray dark:bg-brand-light-gray z-20"
+              animate={{
+                rotate: clicked ? 45 : 0,
+                y: clicked ? 0 : -6,
+              }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+            />
+
+            {/* Middle line */}
+            <motion.span
+              className="absolute h-0.5 w-10 bg-brand-dark-gray dark:bg-brand-light-gray"
+              animate={{
+                opacity: clicked ? 0 : 1,
+              }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            />
+
+            {/* Bottom line */}
+            <motion.span
+              className="absolute h-0.5 w-6 bg-brand-dark-gray dark:bg-brand-light-gray"
+              animate={{
+                rotate: clicked ? -45 : 0,
+                y: clicked ? 0 : 6,
+              }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
             />
         </motion.button>
 
@@ -180,7 +214,7 @@ export default function Home() {
               initial={{ scaleX: 0, originX: 0 }}
               animate={{ scaleX: 1 }}
               exit={{ scaleX: 1 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
+              transition={{ duration: 1, ease: "easeInOut" }}
               className="absolute w-full h-full object-cover cursor-pointer"
             />
 
@@ -191,19 +225,25 @@ export default function Home() {
       
           <div className="absolute left-1/2 -translate-x-1/2 flex gap-2 w-full max-w-2xl bottom-0 p-4">
             <div>
-              <div className='uppercase text-white '>page</div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#171717]/60 via-[#4d4d4d]/50 to-transparent" />
+                <div className='uppercase text-white -mb-[4px]'>page</div>
                 {data.map(({title, tags}, i) => 
                 i === index ? (
                   <div key={index} className="flex flex-col gap-4">
                     <AnimatePresence mode="wait">
                       <motion.h1 className=" font-black capitalize text-2xl text-white "
-                     
+                        initial={{ translateY: 10, opacity:0}}
+                        animate={{ translateY: 0, opacity:1 }}
+                        exit={{ translateY: 0, opacity:1 }}
+                        transition={{ duration: 1, ease: "easeInOut" }}
                       >{title}
                       </motion.h1>
                     </AnimatePresence>
+
+                    
                 
                       {tags.map((tag) => (
-                        <div key={tag} className='bg-brand-dark-gray pl-4 pr-4 p-1 rounded-full text-brand-light-gray capitalize'>
+                        <div key={tag} className='bg-brand-dark-gray pl-4 pr-4 p-1 rounded-full text-brand-light-gray capitalize z-10'>
                           {tag}
                         </div>
                       ))}
@@ -265,7 +305,7 @@ export default function Home() {
                   initial={{ translateY: 10, opacity:0}}
                   animate={{ translateY: 0, opacity:1 }}
                   exit={{ translateY: 0, opacity:1 }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  transition={{ duration: 1, ease: "easeInOut" }}
                 >{title}
                 </motion.h1>
               </Link>
