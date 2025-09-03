@@ -21,7 +21,7 @@ export const data = [
     {
         id: 4,
         title: "contact",
-        description:"contact me to design and build conversion-focused websites with WordPress, Framer, and Webflow—so your product not only works but also stands out",
+        description:"Contact me to design and build conversion-focused websites with WordPress, Framer, and Webflow—so your product not only works but also stands out",
         link: "/",
         img:   "https://i.ibb.co/XXR8kzF/3.png",
         video: "https://res.cloudinary.com/dhrohwpck/video/upload/v1754518631/Eazyfit_Demo_inoujb.mp4",
