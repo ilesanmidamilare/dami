@@ -18,33 +18,38 @@ const About = () => {
         
         <Header/>
 
-        <div className='flex flex-col flex-1 justify-center'>
-          <div className='font-black  mb-4 lg:text-2xl '>About me.</div>
+        <div className='lg:flex flex-col justify-center items-center h-full'>
+          <div className='font-black  mb-4 lg:text-8xl opacity-50 text-2xl mt-10'>About me.</div>
           {/* //Des. */}
-          <div className='gap-12 flex flex-col p-6 lg:p-12 bg-brand-light-gray/50 rounded-3xl lg:4/6 overflow-y-scroll h-100'
+          <div className='gap-12 lg:4/6 overflow-y-scroll h-100'
             style={{
               overflowX: 'scroll',       
               msOverflowStyle: 'none',    
               scrollbarWidth: 'none',
             }}
           >
+            <div className='lg:flex gap-10 '>
             {about.map(({id, title, description, href, icon}) => {
               return (
                 <div key={id} className='flex flex-col gap-4'>
-                  <div className='text-2xl font-black lg:text-8xl flex-1'>{title}</div>
-                  
+                  <div className='flex items-center gap-2'>
+                  <div className=' font-black lg:text-2xl'>{title} </div>
+                  {React.createElement(icon, { size: 16 })}
+                  </div>
                 
-                    <div>{description}</div>
-                    <Link href={href} className=' font-black flex items-center gap-2 underline'>
+                    <div className='text-justify'>{description}</div>
+                    <Link href={href} className=' font-black flex items-center gap-2 underline hover:text-brand-orange'>
                       <div>View</div>
-                      {React.createElement(icon, { size: 16 })}
+                     
                     </Link>
                   
                 </div>
               )
             })}
+            </div>
 
-            <div className="flex gap-2 items-center mt-4 mb-4 underline">
+
+            <div className="flex gap-2 items-center mt-10  underline">
               <div className="capitalize dark:text-brand-light-gray">
                 Let’s continue to
               </div>
@@ -80,8 +85,7 @@ const About = () => {
 
         {/* //Logo */}
         {/* className='flex gap-8 lg:gap-16  items-end  overflow-scroll h-10' */}
-        <div
-
+        <div className=''
             style={{
             overflowY: 'scroll',       
             msOverflowStyle: 'none',    
@@ -97,7 +101,7 @@ const About = () => {
                   width={40}
                   height={40}
                   alt={'expo'}
-                  className='h-15 w-15 lg:h-10 lg:w-24 object-contain lg:ml-15'
+                  className='h-15 w-15 lg:h-10 lg:w-24 object-contain lg:ml-16 opacity-70'
                 />
               </div>
             )

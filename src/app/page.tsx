@@ -245,14 +245,14 @@ export default function Home() {
           
           {/* Mobile screen */}
           <div className="lg:hidden flex flex-col gap-6 w-full justify-center flex-1 ">
-            <div className="gap-4 flex flex-col items-center justify-center flex-1">
-              <div className="relative w-full max-w-xl h-80 mx-auto overflow-hidden rounded-xl  bg-black">
+            <div className="gap-4 flex flex-col items-center justify-center flex-1 rounded-3xl">
+              <div className="relative w-full max-w-xl h-80 mx-auto overflow-hidden rounded-3xl  bg-black">
                 <AnimatePresence mode="wait">
                   {/* Previous image (stays visible until covered) */}
                   <motion.img
                     key={`bg-${index}`}
                     src={data[(index - 1 + data.length) % data.length].img}
-                    className="absolute w-full h-full object-cover cursor-pointer "
+                    className="absolute w-full h-full object-cover cursor-pointer rounded-3xl "
                     initial={{ opacity: 1 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
@@ -271,7 +271,7 @@ export default function Home() {
                     animate={{ translateY: 0, opacity:1 }}
                     exit={{ translateY: 0, opacity:1 }}
                     transition={{ duration: 1, ease: "easeInOut" }}
-                    className="absolute w-full h-full object-cover cursor-pointer"
+                    className="absolute w-full h-full object-cover cursor-pointer rounded-3xl "
                   />
                 </AnimatePresence>
 

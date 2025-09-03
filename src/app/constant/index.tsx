@@ -36,7 +36,7 @@ export const about = [
     {
         id: 1,
         title: "Engineering",
-        description: 'Over the years, I’ve worked on projects ranging from responsive websites to complex SaaS platforms and mobile apps, collaborating closely with designers, backend  engineers, and product teams to bring products to life. building modern web and mobile applications using technologies like React, Next.js, React Native, MongoDB, PostgreSQL TypeScript, and TailwindCSS, with a strong focus on performance, accessibility, and great user experience. What excites me most about frontend engineering is the ability to bridge design and functionality — creating interfaces that not only look beautiful but also feel intuitive and seamless for users.',
+        description: 'Over the years, I’ve worked on projects ranging from responsive websites to complex SaaS platforms and mobile apps, collaborating closely with designers, backend  engineers, and product teams to bring products to life. building modern web and mobile applications using technologies like React, Next.js, React Native, MongoDB, PostgreSQL TypeScript, and TailwindCSS, with a strong focus on performance, accessibility, and great user experience. ',
         href: "https://github.com/yourusername",
         icon: Github,
     },
@@ -44,7 +44,7 @@ export const about = [
     {
         id: 2,
         title: "Design",
-        description: 'With a strong focus on UI/UX design, prototyping, and design systems, I create solutions that balance business goals with real user needs.What excites me most is designing with empathy—understanding user problems deeply and turning them into elegant, practical solutions. I sometimes use early life exprience on brand identity design, logos, typography, and visual storytelling, helping businesses build authentic brands that connect with their audiences. Beyond aesthetics, my expertise lies in fine-tuning design systems and stylesheets to ensure consistency, while also crafting seamless user experiences that flow effortlessly across both digital and print platforms.',
+        description: 'With a strong focus on UI/UX design, prototyping, and design systems, I create solutions that balance business goals with real user needs.What excites me most is designing with empathy—understanding user problems deeply and turning them into elegant, practical solutions. I sometimes use early life exprience on brand identity design, logos, typography, and visual storytelling, helping businesses build authentic brands that connect with their audiences.',
         href: "https://github.com/yourusername",
         icon: Dribbble,
     }
@@ -62,4 +62,5 @@ export const techstack = [
      {id: 9, name: 'tailwindcss',},
     {id: 10, name: 'typescript',},
 ]
+
 
